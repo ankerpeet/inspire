@@ -10,26 +10,38 @@ function TodoController() {
 	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
 
 	// Use this getTodos function as your callback for all other edits
-	function getTodos(){
+	function getTodos() {
 		//FYI DONT EDIT ME :)
 		todoService.getTodos(draw)
 	}
 
 	function draw(todos) {
 		var template = ''
-		for(var i = 0; i < todos.length; i++){
+		for (var i = 0; i < todos.length; i++) {
 			var todo = todos[i];
-			template+= `
+
+			template += `
 			<div>
 				${todo.name} 
-				<input onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"> 
+				<input id="${todo._id}" onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"> 
 				<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">X</button>
 			</div>
 			`
 		}
 		document.getElementById("todo").innerHTML = template;
+		checkComplete(todos)
+
 	}
 
+	function checkComplete(todos) {
+		for (var i = 0; i < todos.length; i++) {
+			var todo = todos[i];
+			if (todo.complete == true) {
+				var x = document.getElementById(todo._id);
+				x.checked = true;
+			}
+		}
+	}
 	this.addTodoFromForm = function (e) {
 		e.preventDefault()
 		var newTodo = e.target.name.value
@@ -50,5 +62,5 @@ function TodoController() {
 	}
 
 	// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
-getTodos()
+	getTodos()
 }
