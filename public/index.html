@@ -15,12 +15,12 @@
 		The Quote
 	</div>
 
-	<div id="todo">
-		<form onsubmit=""></form>
-		A Todo List
+	<div>
+		<div id="todo"></div>
+		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+			<input name="name" type="text"> <button type="submit">+</button>
+		</form>
 	</div>
-
-
 
 
 	<!--JS Libraries-->

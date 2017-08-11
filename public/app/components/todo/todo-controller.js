@@ -15,18 +15,25 @@ function TodoController() {
 	}
 
 	function draw(todos) {
-		//WHAT IS MY PURPOSE?
-		//BUILD YOUR TODO TEMPLATE HERE
 		var template = ''
-		//DONT FORGET TO LOOP
+		for(var i = 0; i < todos.length; i++){
+			var todo = todos[i];
+			template+= `
+			<div>
+				${todo.name} 
+				<input type="checkbox"> 
+				<button>X</button>
+			</div>
+			`
+		}
+		document.getElementById("todo").innerHTML = template;
 	}
 
 	this.addTodoFromForm = function (e) {
-		e.preventDefault() // <-- hey this time its a freebie don't forget this
-		// TAKE THE INFORMATION FORM THE FORM
-		var form = e.target
+		e.preventDefault()
+		var newTodo = e.target.name.value
 		var todo = {
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			name: newTodo
 		}
 
 		//PASSES THE NEW TODO TO YOUR SERVICE
@@ -49,5 +56,5 @@ function TodoController() {
 	}
 
 	// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
-
+getTodos()
 }
