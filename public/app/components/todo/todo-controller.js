@@ -1,4 +1,6 @@
 function TodoController() {
+	var todoService = new TodoService()
+
 	// new up the TodoService that has already been configured for your use
 	// You will need four methods
 	// getTodos should request your api/todos and give an array of todos to your callback fn
@@ -6,7 +8,6 @@ function TodoController() {
 	// toggleTodoStatus takes in a todo marks its status as completed and puts it to the server
 	// removeTodo takes in a todoId and sends a delete request to the server
 	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
-	var todoService = new TodoService()
 
 	// Use this getTodos function as your callback for all other edits
 	function getTodos(){
@@ -21,8 +22,8 @@ function TodoController() {
 			template+= `
 			<div>
 				${todo.name} 
-				<input type="checkbox"> 
-				<button>X</button>
+				<input onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"> 
+				<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">X</button>
 			</div>
 			`
 		}
@@ -35,12 +36,7 @@ function TodoController() {
 		var todo = {
 			name: newTodo
 		}
-
-		//PASSES THE NEW TODO TO YOUR SERVICE
-		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
-		//YOU SHOULDN'T NEED TO CHANGE THIS
 		todoService.addTodo(todo, getTodos)
-		                         //^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
 	}
 
 	this.toggleTodoStatus = function (todoId) {
@@ -50,9 +46,7 @@ function TodoController() {
 	}
 
 	this.removeTodo = function (todoId) {
-		// ask the service to run the remove todo with this id
-
-		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
+		todoService.removeTodo(todoId, getTodos);
 	}
 
 	// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
