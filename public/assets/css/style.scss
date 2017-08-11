@@ -1,5 +1,89 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+$mainColor: rgba(0, 0, 0, 0.5);
+
+
+body {
+    background-repeat: none;
+    background-size: cover;
+    font-family: 'Inconsolata', monospace;
+}
+
+.container {
+    background-color: $mainColor;
+}
+
+.todo-list {
+    background-color: $mainColor;
+    padding: 25px;
+    margin: 25px;
+}
+.todo-input{
+    color: black;
+}
+.btn-danger{
+    float: right;
+}
+
+.item {
+    margin: 10px;
+    padding: 10px;
+}
+.thing {
+    color: white;
+}
+
+.item:hover {
+    background-color: gray;
+}
+
+#weather {
+    font-size: 20px;
+    background-color: $mainColor;
+    color: white;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 50%;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+}
+
+h4 {
+    color: white;
+    font-size: 25px;
+}
+h1 {
+    color: white;
+    font-size: 125px;
+}
+#time {
+    margin: 0 auto;
+    text-align: center;
+}
+.middle {
+    margin: 25px;
+    background-color: $mainColor;
+    padding: 25px;
+    max-width: 450px;
+}
 
 #author {
     display: none;
+    text-align: center;
+}
+#myQuote {
+    margin-bottom: 15px;
+}
+
+#quote {
+    color: white;
+    text-align: center;
+}
+
+@media only screen and (max-width: 892px) {
+    .todo-list{
+        margin: 0;
+    }
 }

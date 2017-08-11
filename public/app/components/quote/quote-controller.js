@@ -11,8 +11,8 @@ function QuoteController() {
 
 	function draw(quote, author) {
 		var template = `
-		<div id="quote">${quote}</div>
-		<div id="author">${author}</div>
+		<div id="myQuote"><q>${quote}</q></div>
+		<div id="author">- ${author}</div>
 		`
 		document.getElementById("quote").innerHTML = template;
 	}

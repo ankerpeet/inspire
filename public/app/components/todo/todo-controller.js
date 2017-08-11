@@ -1,15 +1,5 @@
 function TodoController() {
 	var todoService = new TodoService()
-
-	// new up the TodoService that has already been configured for your use
-	// You will need four methods
-	// getTodos should request your api/todos and give an array of todos to your callback fn
-	// addTodo takes in a todo and posts it to the server
-	// toggleTodoStatus takes in a todo marks its status as completed and puts it to the server
-	// removeTodo takes in a todoId and sends a delete request to the server
-	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
-
-	// Use this getTodos function as your callback for all other edits
 	function getTodos() {
 		//FYI DONT EDIT ME :)
 		todoService.getTodos(draw)
@@ -21,10 +11,10 @@ function TodoController() {
 			var todo = todos[i];
 
 			template += `
-			<div>
-				${todo.name} 
-				<input id="${todo._id}" onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"> 
-				<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">X</button>
+			<div class="item">
+				<input class="todo-input" id="${todo._id}" onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"> 
+				<span class="thing">${todo.name}</span>
+				<button class="btn btn-danger" type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">x</button>
 			</div>
 			`
 		}
