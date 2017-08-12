@@ -4,9 +4,16 @@ function TimeController() {
         var h = today.getHours();
         var m = today.getMinutes();
         var s = today.getSeconds();
+        var pm = "PM"
         m = checkTime(m);
         s = checkTime(s);
-        document.getElementById('time').innerHTML = `<h1>${h}:${m}</h1>`
+        if(h < 12){
+            pm = "AM"
+        }
+        if(h > 12){
+            h = h - 12;
+        }
+        document.getElementById('time').innerHTML = `<h1>${h}:${m} <span class="am-pm">${pm}</span></h1>`
            // h + ":" + m + ":" + s;
         var t = setTimeout(function(){startTime();}, 500);
     }

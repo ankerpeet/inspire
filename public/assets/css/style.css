@@ -1,9 +1,19 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
 body {
   background-repeat: none;
   background-size: cover;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Cairo', sans-serif;
+}
+
+input {
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.btn {
+  font-size: 16px;
 }
 
 .container {
@@ -15,6 +25,7 @@ body {
   padding: 25px;
   margin: 25px 25px 0 25px;
   width: 100%;
+  border-radius: 5px 5px 0 0;
 }
 
 .todo-input {
@@ -23,10 +34,6 @@ body {
 
 #main-input {
   width: 60%;
-}
-
-.btn-danger {
-  float: right;
 }
 
 #weather {
@@ -46,15 +53,16 @@ body {
   padding: 25px;
   margin: 0 25px 25px 25px;
   width: 100%;
-}
-
-#delete {
-  margin: 5px;
+  border-radius: 0 0 5px 5px;
 }
 
 .item {
   font-size: 18px;
   padding: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .thing {
@@ -63,6 +71,7 @@ body {
 
 .item:hover {
   background-color: gray;
+  border-radius: 5px;
 }
 
 h4 {
@@ -75,11 +84,17 @@ h1 {
   font-size: 125px;
 }
 
+.am-pm {
+  font-size: 25px;
+  color: white;
+}
+
 .time-quote {
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 25px;
   margin: 25px;
+  border-radius: 5px;
 }
 
 #author {

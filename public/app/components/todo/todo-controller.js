@@ -11,14 +11,15 @@ function TodoController() {
 			var todo = todos[i];
 
 			template += `
-			<div class="item">
-				<input class="todo-input" id="${todo._id}" onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"> 
-				<span class="thing">${todo.name.toUpperCase()}</span>
+			<div class="item" onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')">
+				<div><input class="todo-input" id="${todo._id}" type="checkbox"> 
+				<span class="thing">${todo.name.toUpperCase()}</span></div>
 				<button id="delete" class="btn btn-danger" type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">x</button>
 			</div>
 			`
 		}
 		document.getElementById("todo").innerHTML = template;
+		document.getElementById("main-form").reset();
 		checkComplete(todos)
 
 	}
