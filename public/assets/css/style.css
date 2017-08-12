@@ -13,28 +13,20 @@ body {
 .todo-list {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 25px;
-  margin: 25px;
+  margin: 25px 25px 0 25px;
+  width: 100%;
 }
 
 .todo-input {
   color: black;
 }
 
+#main-input {
+  width: 60%;
+}
+
 .btn-danger {
   float: right;
-}
-
-.item {
-  margin: 10px;
-  padding: 10px;
-}
-
-.thing {
-  color: white;
-}
-
-.item:hover {
-  background-color: gray;
 }
 
 #weather {
@@ -49,6 +41,30 @@ body {
   width: 100px;
 }
 
+#todo {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 25px;
+  margin: 0 25px 25px 25px;
+  width: 100%;
+}
+
+#delete {
+  margin: 5px;
+}
+
+.item {
+  font-size: 18px;
+  padding: 18px;
+}
+
+.thing {
+  color: white;
+}
+
+.item:hover {
+  background-color: gray;
+}
+
 h4 {
   color: white;
   font-size: 25px;
@@ -59,16 +75,11 @@ h1 {
   font-size: 125px;
 }
 
-#time {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.middle {
-  margin: 25px;
+.time-quote {
   background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
   padding: 25px;
-  max-width: 450px;
+  margin: 25px;
 }
 
 #author {
@@ -83,10 +94,4 @@ h1 {
 #quote {
   color: white;
   text-align: center;
-}
-
-@media only screen and (max-width: 892px) {
-  .todo-list {
-    margin: 0;
-  }
 }

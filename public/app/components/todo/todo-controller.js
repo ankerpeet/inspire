@@ -13,8 +13,8 @@ function TodoController() {
 			template += `
 			<div class="item">
 				<input class="todo-input" id="${todo._id}" onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"> 
-				<span class="thing">${todo.name}</span>
-				<button class="btn btn-danger" type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">x</button>
+				<span class="thing">${todo.name.toUpperCase()}</span>
+				<button id="delete" class="btn btn-danger" type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">x</button>
 			</div>
 			`
 		}
