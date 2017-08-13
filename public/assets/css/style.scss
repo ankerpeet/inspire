@@ -37,7 +37,7 @@ input {
     color: black;
 }
 #main-input{
-    width: 60%;
+    width: 80%;
 }
 
 #weather {
@@ -76,6 +76,12 @@ input {
     border-radius: $radius;
 }
 
+.top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+}
 
 h4 {
     color: $text;

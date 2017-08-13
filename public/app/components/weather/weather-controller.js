@@ -17,4 +17,5 @@ function WeatherController(){
 		
 	})
 
+	weatherService.getLocation();
 }

@@ -1,6 +1,26 @@
 function WeatherService() {
+	var location = "";
+
+	this.getLocation = function() {
+		$.ajax({
+			type: "GET",
+			url: "https://ipinfo.io/json/",
+			success: coordinates
+		});
+
+		// coordinates callback function
+		function coordinates(data) {
+			var coords = data.loc;
+			var city = data.city;
+			var region = data.region;
+			var country = data.country;
+
+			console.log(city)
+		}
+	}
+
 	var url = '//bcw-getter.herokuapp.com/?url=';
-	var url2 = 'http://api.openweathermap.org/data/2.5/weather?q=boise&&APPID=bd82255fd0a21fa1238699b9eda2ee35'
+	var url2 = 'http://api.openweathermap.org/data/2.5/weather?q=boise&&APPID=a9526bc90934e0ce29236acaaca67c85'
 	var apiUrl = url + encodeURIComponent(url2);
 
 	this.getWeather = function (callWhenDone) {
@@ -13,4 +33,5 @@ function WeatherService() {
 			callWhenDone(res);
 		})
 	}
+
 }

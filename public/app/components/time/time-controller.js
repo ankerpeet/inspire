@@ -7,6 +7,10 @@ function TimeController() {
         var pm = "PM"
         m = checkTime(m);
         s = checkTime(s);
+        if(h == 0){
+            h = 12;
+            pm = "AM"
+        }
         if(h < 12){
             pm = "AM"
         }
