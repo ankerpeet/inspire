@@ -7,7 +7,7 @@ mongoose.connect('mongodb://anker:anker@ds157980.mlab.com:57980/ankerpeetinspire
 })
 
 connection.on('error', (err) => {
-    console.log('Mlab ERROR you fool ', err);
+    console.log('Mlab ERROR you fool:', err);
 })
 
 connection.once('open', () => {

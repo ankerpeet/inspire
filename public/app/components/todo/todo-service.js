@@ -25,18 +25,12 @@ function TodoService() {
 	}
 
 	this.toggleTodoStatus = function (todoId, getTodos) {
-		// MAKE SURE WE THINK THIS ONE THROUGH
-
 		var todo = todoList.find(todo => todo._id == todoId)
 		if (todo.complete == false) {
 			todo.complete = true;
 		} else {
 			todo.complete = false;
 		}
-
-		//STEP 1: Find the todo by its id **HINT** todoList
-
-		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 
 		$.ajax({
 			method: 'PUT',
@@ -60,9 +54,4 @@ function TodoService() {
 			.then(getTodos)
 			.fail(logError)
 	}
-
-
-
-	// I KNOW LOTS OF CODE RIGHT
-
 }

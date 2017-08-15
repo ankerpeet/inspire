@@ -18,9 +18,18 @@ function TodoController() {
 			</div>
 			`
 		}
+		var newArr = []
+		for(var i = 0; i < todos.length; i++){
+			if(todos[i].complete == false){
+				newArr.push(todos[i])
+			}
+		}
+		template += `<div class="thing">${newArr.length} left to do</div>`
+
 		document.getElementById("todo").innerHTML = template;
 		document.getElementById("main-form").reset();
 		checkComplete(todos)
+
 
 	}
 
