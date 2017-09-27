@@ -3,7 +3,7 @@ function ImageController() {
 	var imageService = new ImageService()
 
 	function updateImage(img){
-		var imgUrl = img.url;
+		var imgUrl = img;
 		document.body.style.backgroundImage = `url('${imgUrl}')`;
 	}
 

@@ -5,6 +5,7 @@ function ImageService() {
 
 	this.getImage = function (cb) {
 		// ^^^^^^^ How do you call this function?
+		return cb("../../../assets/beatenberg.jpg")
 		return $.get(apiUrl, function (res) {
 			res = JSON.parse(res)
 			cb(res)
