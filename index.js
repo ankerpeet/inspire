@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var dbConnect = require('./config/db/mlab-config');
 
 //PORT NUMBER
-var port = 3000;
+var port = process.env.PORT || 3000;
 
 //LISTENING
 var server = express();
